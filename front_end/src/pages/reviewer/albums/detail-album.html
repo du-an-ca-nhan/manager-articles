@@ -1,0 +1,184 @@
+<!-- <h1 ng-show="album.numberOfArticle = 0">LÀM GÌ CÓ BÀI VIẾT NÀO MÀ TÌM</h1> -->
+<section class="album-det" ng-show="album.numberOfArticle > 0">
+  <div class="container">
+    <section class="ben-trai">
+      <div class="row">
+        <div
+          class="col-md-4 col order-first backtrai"
+          style="background-image: url(../../../articles-project/src/main/resources/templates/articles/{{idArticle}}/image.png)"
+        >
+          <div class="noidungback">
+            <img
+              ng-src="../../../articles-project/src/main/resources/templates/articles/{{idArticle}}/image.png"
+              alt=""
+            />
+            <!-- <div class="nameuser" style="margin-left: 5px">
+              <b>Title :</b>
+            </div> -->
+            <div class="input-group mb-3" ng-if="checkAuthor">
+              <input
+                class="hihi form-control"
+                required=""
+                type="text"
+                value="{{album.title}}"
+                ng-model="album.title"
+                style="height: 50px; font-weight: bold; font-weight: 90px"
+              /><span
+                class="input-group-text hihi1"
+                style="
+                  margin-top: 5px;
+                  padding-top: 10px;
+                  margin-bottom: 20px;
+                  font-size: 20px;
+                "
+                ><i
+                  class="bi bi-check-lg"
+                  type="button"
+                  ng-click="updateAlbum()"
+                ></i
+              ></span>
+              <small id="helpId" class="form-text text-danger"
+                >{{errTitle}}</small
+              >
+            </div>
+            <div class="input-group mb-3" ng-if="!checkAuthor">
+             <p class="hihi"> {{album.title}}</p>
+            </div>
+            <!-- <button
+              type="button"
+              ng-click="updateAlbum()"
+              class="btn btn-success"
+            > -->
+
+            <!-- </button> -->
+            <!-- <div class="namealbum">
+              {{album.title}}
+              <span><i class="bi bi-pen"></i></span>
+            </div> -->
+            <div
+              class="nameuser"
+              style="margin-left: 5px; margin-bottom: 10px; margin-top: -20px"
+            >
+              <b>{{album.userName }}</b>
+            </div>
+            <div class="input-group mb-3" ng-if="!checkAuthor">
+              <p class="hihi"> {{album.status? "public" : "private"}}</p>
+             </div>
+            <select
+              class="form-select"
+              ng-model="album.status"
+              ng-change="updateAlbum()"
+              ng-if="checkAuthor"
+            >
+              <option
+                value="0"
+                ng-selected="album.status == '0'"
+                style="font-size: 16px; margin-bottom: 20px"
+              >
+                Private
+              </option>
+              <option
+                value="1"
+                ng-selected="album.status == '1'"
+                style="font-size: 16px"
+              >
+                Public
+              </option>
+            </select>
+            <div class="nameuser" style="font-size: 13px">
+              <p>
+                {{album.numberOfArticle}} article
+                <span style="margin-left: 10px">
+                  2 <i class="bi bi-suit-heart-fill"></i
+                ></span>
+                <span style="margin-left: 10px">
+                  2 <i class="bi bi-star-fill"></i
+                ></span>
+              </p>
+            </div>
+            <hr style="border-top: 4px #eee solid" />
+            <div class="cham">
+              <i
+                class="bi bi-three-dots-vertical"
+                style="width: 12%; color: #eee"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></i>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    ng-if="author"
+                    ng-click="deleteAlbum()"
+                    >Delete Album</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="backtrai__background"></div>
+        </div>
+        <div class="col-12 col-sm-8 benphai" style="height: auto">
+          <div class="row" style="height: 40px; padding-left: 10px">
+            <i class="bi bi-filter-right"><span> Sort</span></i>
+          </div>
+          <section class="bai-viet" ng-repeat="ar in listArticle">
+            <div class="row">
+              <div class="col-1" style="padding-right: 0px">
+                <i class="bi bi-list"></i>
+              </div>
+              <div class="col-3" align="top" style="padding-left: 0px">
+                <img
+                  ng-src="../../../articles-project/src/main/resources/templates/articles/{{ar.id}}/image.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-7">
+                <a
+                  href="#article/{{ar.id}}"
+                  class="link-custom"
+                  ng-click="saveArticleInLocalStorage($index)"
+                  >{{ar.title}}</a
+                >
+                <p class="text-dark">{{ar.descriptive}}</p>
+              </div>
+              <div class="col-1">
+                <div class="cham">
+                  <i
+                    class="bi bi-three-dots-vertical"
+                    style="width: 12%"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></i>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        ng-if="author"
+                        ng-click="deleteArticleInAlbum(ar.id, album.id)"
+                        >Delete Article</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#article/{{ar.id}}"
+                        class="dropdown-item"
+                        ng-click="saveArticleInLocalStorage($index)"
+                        >Read More</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

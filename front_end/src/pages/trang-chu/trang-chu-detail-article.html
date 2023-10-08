@@ -1,0 +1,193 @@
+<div class="container" style="margin-top: 100px">
+  <div class="trenn">
+    <div class="profile justify-content-between">
+      <span class="profile-name">
+        <img src="/front_end/assets/people.png" alt="" class="profile-img" />
+        <label class="mt-1" style="margin-left: 10px; font-size: 20px">Phạm Xuân Hải</label>
+        <span class="ms-2">
+          <a href="#/search-category?category={{articleById.nameCategory}}" type="button"
+            class="btn btn-outline-success custom-btn" title="Thể loại"
+            style="font-size: 12px; padding: 2px 6px; margin-top: -3px">
+            {{articleById.nameCategory}}
+          </a>
+        </span>
+      </span>
+
+      <span class="dang" style="color: grey">
+        Đã đăng vào ngày {{articleById.browseDate | date:'dd/MM/yyyy hh:mm'}}
+        phút
+        <div class="post-meta__item mr-1 text-muted mt-2" data-tippy="" data-original-title="Lượt xem: 10">
+          <i class="bx bx-star" style="font-size: 20px"> </i>
+
+          <span style="font-size: 20px" class="me-4">{{articleById.star}}</span>
+
+          <a style="color: grey">
+            <i class="fa-sharp fa-solid fa-comments" style="color: #8f8f8f; font-size: 20px"></i>
+            <span style="font-size: 20px" class="me-4">{{articleById.numberComments}}</span>
+          </a>
+          <a style="color: grey" href="#/login">
+            <i class="fa-sharp fa-solid fa-heart" style="font-size: 20px"></i>
+            <span style="font-size: 20px">{{articleById.tym}}</span>
+          </a>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="chuyenmau">
+    <section class="bvchitiet">
+      <div class="row">
+        <div class="col-lg-12">
+          <article data-test="article-preview" class="sc-kHOZwM sc-hOGkXu dPKgXc fiTxcb" align="center">
+            <div data-test="container" class="sc-bdvvtL cCOiXd" style="background-color: #d4fee2">
+              <div class="sc-bdvvtL jbSNqA sc-kHOZwM cjDrZK">
+                <div class="sc-bdvvtL iHLSCF">
+                  <a data-test="heading-image-link" href="/blog/content-planning/" class="sc-cZMNgc iNdGjO"
+                    style="color: green"><img data-test="image" height="250" width="310"
+                      style="height: 200px; width: 350px" class="mt-4"
+                      ng-src="../../../articles-project/src/main/resources/templates/articles/{{articleById.id}}/image.png"
+                      alt="content planning" /></a>
+                </div>
+                <div class="sc-bdvvtL FmHLX">
+                  <h2 data-test="heading-text" class="sc-bBHxTw hsjjsR">
+                    <a data-test="heading-link" href="/blog/content-planning/" style="color: green">
+                      {{articleById.title}}
+                    </a>
+                  </h2>
+                  <div class="sc-bdvvtL ftOnze">
+                    <span data-test="date">
+                      {{articleById.browseDate | date:'dd/MM/yyyy'}}
+                    </span>
+                    <span class="profile-name ms-2" style="font-size: 15px">{{articleById.name}}
+                    </span>
+                    <a ng-repeat="hastag in articleById.hashtags.split(',') track by $index"
+                      href="#/search-hashtag?hashtag={{hastag}}" style="color: green" class="ms-3">
+                      <i class="bx bxs-purchase-tag" style="color: green"></i>{{hastag}}</a>
+                    <span class="ms-2">
+                      <a href="#/search-category?category={{articleById.nameCategory}}" type="button"
+                        class="btn btn-outline-success custom-btn mb-2" title="Thể loại" style="
+                          font-size: 12px;
+                          padding: 2px 6px;
+                          margin-top: -3px;
+                        ">
+                        {{articleById.nameCategory}}
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chitiet" style="background-color: rgb(255, 255, 255)">
+      <div class="row">
+        <div class="col" data-aos="fade-up">
+          <div data-parse="true" class="sc-bdvvtL ikHgNc sc-fydGpi jwdqZU" style="background-color: white">
+            <div
+              ng-include="'../../../articles-project/src/main/resources/templates/articles/' + articleById.id + '/toi-thanh-cong-roi.html'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mb-3">
+      <div class="comments">
+        <div class="row">
+          <div class="col-11 mt-3 ms-5">
+            <div class="row container-fluild">
+              <form action="" name="form_create_comment">
+                <div class="card-footer py-3" style="
+                    background-color: #ffffff;
+                    border: 1px solid rgb(202, 202, 202);
+                    border-radius: 10px;
+                    height: 280px;
+                  ">
+                  <div class="d-flex flex-start w-100" style="margin-top: 30px; margin-bottom: 30px">
+                    <div class="form-outline w-100 ms-5" style="padding-right: 20px">
+                      <textarea class="form-control" id="textAreaExample" rows="4" style="
+                          background: #fff;
+                          border: 1px solid rgb(135, 135, 135);
+                          width: 100%;
+                        " placeholder="Message" name="content" ng-model="comment.content" required
+                        minlength="6"></textarea>
+                      <span class="text-danger"
+                        ng-show="form_create_comment.content.$error.required && form_create_comment.content.$touched">
+                        Không được để trống
+                      </span>
+                      <span class="text-danger"
+                        ng-show="form_create_comment.content.$error.minlength && form_create_comment.content.$touched">
+                        Vui lòng nhập ít nhất 6 kí tự
+                      </span>
+                    </div>
+                  </div>
+                  <div class="float-end pt-1">
+                    <button type="button" class="btn btn-primary btn-sm" >
+                      <a href="#/login">
+                        Post comment
+                      </a>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" style="margin-right: 50px">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end comment -->
+
+    <section class="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="heading-section mb-4">Bài Viết Của Bạn</h2>
+          </div>
+          <div class="col-md-12">
+            <div class="featured-carousel owl-carousel">
+              <div class="row">
+                <div class="post container">
+                  <!-- Post 1 -->
+                  <div class="post-box tech" ng-repeat="ar in listArticle">
+                    <span class="loai ms-2">
+                      <a href="#/search-category?category={{ar.nameCategory}}" type="button"
+                        class="buttons-category mt-2" title="Thể loại">
+                        {{ar.nameCategory}} java
+                      </a>
+                    </span>
+                    <a href="#article/{{ar.id}}"><img
+                        ng-src="../../../articles-project/src/main/resources/templates/articles/{{ar.id}}/image.png"
+                        alt="" class="post-img" />
+                    </a>
+
+                    <p data-test="category" class="category">
+                      <a href="#/search-hashtag?hashtag={{hashtag.trim()}}" class="category" style="color: green"
+                        ng-repeat="hashtag in ar.hashtags.split(',') track by $index"><i
+                          class="bx bxs-purchase-tag"></i>{{hashtag}}</a>
+                    </p>
+                    <a href="#article/{{ar.id}}" class="post-title">{{ar.title}}</a>
+                    <span class="post-date">{{ar.browseDate| date:'dd/MM/yyyy'}}</span>
+                    <p class="post-description">{{ar.descriptive}}</p>
+                    <div class="profile">
+                      <img src="{{ar.img}}" alt="" class="profile-img" />
+                      <div class="d-flex flex-column mb-1">
+                        <span class="profile-name">{{ar.name}}</span>
+                        <span class="post-date">{{ar.browseDate| date:'dd/MM/yyyy'}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

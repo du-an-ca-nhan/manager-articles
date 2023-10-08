@@ -1,0 +1,487 @@
+<section id="blog" class="">
+  <div class="bt pb-4">
+    <button
+      type="button"
+      class="btn btn-light me-5"
+      ng-click="searchFillter('')"
+    >
+      All
+    </button>
+    <span ng-repeat="cate in listCategory">
+      <div class="search1 btn btn-light me-5" ng-click="searchFillter(cate.id)">
+        {{cate.name}}
+      </div>
+    </span>
+  </div>
+  <!-- <div class="container-fluid"> -->
+  <div class="row gy-4">
+    <div class="col-md-6" data-aos="fade-up" ng-repeat="ar in listArticle">
+      <div class="card-custom rounded-4" style="margin-bottom: 30px">
+        <div
+          class="card-custom-image"
+          style="position: relative; border-radius: 20px"
+        >
+          <div class="button-contain">
+            <a
+              href="#article/{{ar.id}}"
+              ng-click="saveArticleInLocalStorage($index)"
+              class="btn btncate"
+              style="
+                /* display: inline-block;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap; */
+              "
+              ng-bind="ar.title | limitTo: 100"
+              >{{ar.title.length > 100 ? '...' : ''}}</a
+            >
+            <div class="hoho">
+              <!-- <a
+                href="#article/{{ar.id}}"
+                class="link-custom"
+                ng-click="saveArticleInLocalStorage($index)"
+                >Read More</a
+              > -->
+            </div>
+          </div>
+          <div class="button-container">
+            <a
+              ng-click="favoriteArticle(ar.id, $index)"
+              ng-if="ar.favorite == 0"
+              class="btn btn-success me-2"
+              style="border-radius: 20px"
+              ><i class="bx bx-heart"></i>
+            </a>
+            <!--{{ar.tym}} -->
+            <a
+              ng-click="unfavoriteArticle(ar.id, $index)"
+              class="btn btn-success me-2"
+              ng-if="ar.favorite == 1"
+              style="border-radius: 20px"
+              ><i class="bx bxs-heart"></i
+            ></a>
+          </div>
+          <div class="button-container1">
+            <div class="btn cham" style="border-radius: 0px">
+              <i
+                class="bi bi-three-dots-vertical"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></i>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addArticleAlbum"
+                    ng-click="showModalAddArticleToAlbum(ar.id)"
+                    >Thêm vào album</a
+                  >
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            Đặt Tên
+                          </h1>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">hhhh</div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" class="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    ng-click="showConfirmDeleteAlbum($index, album.id)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteAlbumModal"
+                    >Ẩn bài viết</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    ng-click="showConfirmDeleteAlbum($index, album.id)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteAlbumModal"
+                    >Báo Cáo</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <img
+            class="rounded-4"
+            src="../../../articles-project/src/main/resources/templates/articles/{{ar.id}}/image.png"
+            alt="Image"
+            style="max-height: 300px; width: 100%; object-fit: cover"
+          />
+        </div>
+        <!-- <div class="card-custom-content p-4">
+          <h5
+            class="mb-4"
+            style="
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              padding-bottom: 0px;
+              margin-top: -10px;
+            "
+          >
+            {{ar.title}}
+          </h5>
+          <a
+            href="#article/{{ar.id}}"
+            class="link-custom"
+            ng-click="saveArticleInLocalStorage($index)"
+            style="padding-top: 0px"
+            >Read More</a
+          >
+          <a
+            ng-click="favoriteArticle(ar.id, $index)"
+            ng-if="ar.favorite == 0"
+            class="me-2"
+            ><i class="bx bx-heart"></i> {{ar.tym}}</a
+          >
+          <a
+            ng-click="unfavoriteArticle(ar.id, $index)"
+            class="me-2"
+            ng-if="ar.favorite == 1"
+            ><i class="bx bxs-heart"></i> {{ar.tym}}</a
+          >
+  <div class="container-fluid">
+    <div class="row gy-4">
+      <div class="col-md-4" data-aos="fade-up" ng-repeat="ar in listArticle">
+        <div class="card-custom rounded-4 bg-base shadow-effect">
+          <div class="card-custom-image rounded-4">
+            <img
+              class="rounded-4"
+              ng-src="../../../articles-project/src/main/resources/templates/articles/{{ar.id}}/image.png"
+              alt="Image"
+              style="max-height: 160px; width: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="card-custom-content p-4">
+            <h5
+              class="mb-4"
+              style="
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-bottom: 0px;
+                margin-top: -10px;
+              "
+            >
+              {{ar.title}}
+            </h5>
+            <a
+              href="#article/{{ar.id}}"
+              class="link-custom pe-3"
+              ng-click="saveArticleInLocalStorage($index)"
+              style="padding-top: 0px"
+              >Read More</a
+            >
+            <a
+              ng-click="favoriteArticle(ar.id, $index)"
+              ng-if="ar.favorite == 0"
+              class="me-2"
+              ><i class="bx bx-heart"></i> {{ar.tym}}</a
+            >
+            <a
+              ng-click="unfavoriteArticle(ar.id, $index)"
+              class="me-2"
+              ng-if="ar.favorite == 1"
+              ><i class="bx bxs-heart"></i> {{ar.tym}}</a
+            >
+
+          <div class="cham" style="border-radius: 0px">
+            <i
+              class="bi bi-three-dots-vertical"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a
+                  class="dropdown-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addArticleAlbum"
+                  ng-click="showModalAddArticleToAlbum(ar.id)"
+                  >Thêm vào album</a
+                >
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Đặt Tên
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">hhhh</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  ng-click="showConfirmDeleteAlbum($index, album.id)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteAlbumModal"
+                  >Ẩn bài viết</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  ng-click="showConfirmDeleteAlbum($index, album.id)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteAlbumModal"
+                  >Báo Cáo</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-10" style="margin-top: 10px">
+            <div class="card__avatars cluster color-?mid-text">
+              <img
+                class="img"
+                sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                ng-src="{{ar.img}}"
+              />
+              <div class="flow flow-space-size-0">
+                <div class="card__authors flow-space-base" aria-label="authors">
+                  <a
+                    href="#/users/{{ar.userId}}"
+                    class="text-dark"
+                    style="font-weight: bolder; font-size: 15px"
+                    >{{ar.name}}</a
+                  >
+                </div>
+                <p class="text-brand mb-2">
+                  {{ar.browseDate| date:'dd/MM/yyyy'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<div class="container">
+  <div class="pagination justify-content-center">
+    <ul class="pagination">
+      <button
+        style="height: 35px"
+        class="page-link me-3"
+        ng-click="prevPage() "
+        ng-disabled="pageModel == 1"
+      >
+        <i class="bi bi-caret-left"></i>
+      </button>
+      <li>
+        <input
+          type="text"
+          ng-change="inputChangeEvent()"
+          ng-model="pageModel"
+          min="1"
+          max="{{totalPages}}"
+          style="width: 35px; font-size: 18px"
+        />
+        <span>
+          <b style="font-size: 20px" class="ms-2 me-2"> / </b
+          >{{totalPages}}</span
+        >
+      </li>
+      <button
+        class="page-link ms-3"
+        ng-click="nextPage()"
+        ng-disabled="pageModel == totalPages"
+      >
+        <i class="bi bi-caret-right"></i>
+      </button>
+    </ul>
+  </div>
+</div>
+
+<!-- begin add article album -->
+<div
+  class="modal fade"
+  id="addArticleAlbum"
+  tabindex="-1"
+  aria-labelledby="addArticleAlbum"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Save to album</h5>
+        <button
+          type="button"
+          ng-click="closeFormAddAlbum()"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <input
+          type="text"
+          class="form-control"
+          ng-change="searchAlbum()"
+          ng-model="nameAlbum"
+          placeholder="Enter name album..."
+        />
+        <table style="margin: 10px">
+          <thead></thead>
+          <tbody style="display: block; height: 100px; overflow-y: scroll">
+            <tr ng-repeat="album in listAlbum track by $index">
+              <td>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  style="margin-right: 15px"
+                  value="{{album.id}}"
+                  id="{{album.id}}"
+                  data-ng-click="addArticleToAlbum(album.id)"
+                  ng-checked="album.countArticle != 0"
+                />
+              </td>
+              <td>{{album.title}}</td>
+              <td ng-if="album.status"><i class="bx bx-world"></i></td>
+              <td ng-if="album.status == false">
+                <i class="bi bi-incognito"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="createAlbum" ng-click="showCreateAlbum()">Create album</div>
+        <form
+          name="formThemMoi"
+          id="formThemMoi"
+          style="display: none"
+          novalidate
+        >
+          <div class="mb-3">
+            <label for="exampleInputTitle" class="form-label">Title:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              id="exampleInputPassword1"
+              required
+              ng-model="createAlbumRequest.title"
+              minlength="2"
+            />
+            <span
+              class="text-danger"
+              ng-show="formThemMoi.title.$error.required && formThemMoi.title.$touched"
+              >vui lòng nhập title</span
+            >
+            <span
+              class="text-danger"
+              ng-show="formThemMoi.title.$error.minlength && formThemMoi.title.$touched"
+            >
+              Vui lòng nhập ít nhất 2 kí tự
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputTitle" class="form-label">Status</label>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="status"
+                value="false"
+                id="flexRadioDefault1"
+                ng-model="createAlbumRequest.status"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                <i class="bi bi-incognito"></i> Private
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="status"
+                value="true"
+                id="flexRadioDefault2"
+                ng-model="createAlbumRequest.status"
+                checked
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                <i class="bi bi-book"></i> Public
+              </label>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            ng-click="createAlbum($event)"
+          >
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end add article album -->

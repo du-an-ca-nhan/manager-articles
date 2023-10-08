@@ -1,0 +1,228 @@
+<div class="container-fluid">
+  <div class="menu-detail-myarrticle">
+    <div class="dot"></div>
+  </div>
+  <section class="bvchitiet">
+    <div class="row">
+      <div class="col-lg-12">
+        <article
+          data-test="article-preview"
+          class="sc-kHOZwM sc-hOGkXu dPKgXc fiTxcb"
+        >
+          <div data-test="container" class="sc-bdvvtL cCOiXd">
+            <div class="sc-bdvvtL jbSNqA sc-kHOZwM cjDrZK">
+              <div class="sc-bdvvtL iHLSCF">
+                <a
+                  data-test="heading-image-link"
+                  href="/blog/content-planning/"
+                  class="sc-cZMNgc iNdGjO"
+                  ><img
+                    data-test="image"
+                    height="250"
+                    width="310"
+                    style="height: 200px"
+                    src="../../../articles-project/src/main/resources/templates/articles/{{myArticleById.id}}/image.png"
+                    alt="content planning"
+                /></a>
+              </div>
+              <div class="sc-bdvvtL FmHLX">
+                <h2 data-test="heading-text" class="sc-bBHxTw hsjjsR">
+                  <a data-test="heading-link" href="/blog/content-planning/">
+                    {{myArticleById.title}}
+                  </a>
+                </h2>
+                <div class="review-hash" style="text-align: center">
+                  <a
+                    href="#/users/{{myArticleById.userId}}"
+                    class="text-dark"
+                    style="font-weight: bolder; font-size: 15px"
+                    >{{myArticleById.name}}</a
+                  >
+                  <strong
+                    data-test="category"
+                    class="sc-dtMgUX iEGeoe me-2 ms-2"
+                  >
+                    <a
+                      data-test="category-link"
+                      target="_blank"
+                      href="/blog/category/content-creation/"
+                      ><i
+                        class="fa-solid fa-tags me-2"
+                        style="color: #049e5bcb"
+                      ></i
+                      >{{myArticleById.hashtags}}
+                    </a></strong
+                  >
+                  <span>
+                    {{myArticleById.createdDate | date:'dd/MM/yyyy'}}
+                  </span>
+
+                  <!-- <strong data-test="category" class="sc-dtMgUX iEGeoe"
+                      ><a
+                        data-test="category-link"
+                        target="_blank"
+                        href="/blog/category/content-creation/"
+                        >{{myArticleById.hashtags}}</a
+                      ></strong
+                    > -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="chitiet">
+    <div class="row gy-4 pt-5">
+      <div class="col" data-aos="fade-up">
+        <div
+          data-parse="true"
+          class="sc-bdvvtL ikHgNc sc-fydGpi jwdqZU"
+          style="background-color: white; padding: 40px"
+        >
+          <div
+            ng-include="'../../../articles-project/src/main/resources/templates/articles/' + myArticleById.id + '/toi-thanh-cong-roi.html'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <!-- <div class="col-sm-3" data-aos="fade-up">
+        <div class="rating">
+          <input type="radio" id="star5" name="rate" value="5" />
+          <label for="star5" title="text"></label>
+          <input type="radio" id="star4" name="rate" value="4" />
+          <label for="star4" title="text"></label>
+          <input checked="" type="radio" id="star3" name="rate" value="3" />
+          <label for="star3" title="text"></label>
+          <input type="radio" id="star2" name="rate" value="2" />
+          <label for="star2" title="text"></label>
+          <input type="radio" id="star1" name="rate" value="1" />
+          <label for="star1" title="text"></label>
+        </div>
+      </div> -->
+      <div class="row mt-2">
+        <div class="col-md-7"></div>
+        <div class="col-md-5">
+          <div class="rating">
+            <input
+              type="radio"
+              id="star5"
+              name="rate"
+              value="5"
+              ng-model="rating"
+            />
+            <label for="star5" title="text"></label>
+            <input
+              type="radio"
+              id="star4"
+              name="rate"
+              value="4"
+              ng-model="rating"
+            />
+            <label for="star4" title="text"></label>
+            <input
+              type="radio"
+              id="star3"
+              name="rate"
+              value="3"
+              ng-model="rating"
+            />
+            <label for="star3" title="text"></label>
+            <input
+              type="radio"
+              id="star2"
+              name="rate"
+              value="2"
+              ng-model="rating"
+            />
+            <label for="star2" title="text"></label>
+            <input
+              type="radio"
+              id="star1"
+              name="rate"
+              value="1"
+              ng-model="rating"
+            />
+            <label for="star1" title="text"></label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="comments">
+          <div class="row">
+            <div class="col-11 mt-2 ms-5">
+              <div class="row container-fluild">
+                <form action="" name="form_create_comment">
+                  <div
+                    class="card-footer py-3"
+                    style="
+                      background-color: #ffffff;
+                      border: 1px solid rgb(202, 202, 202);
+                      border-radius: 10px;
+                      height: 280px;
+                    "
+                  >
+                    <div
+                      class="d-flex flex-start w-100"
+                      style="margin-top: 30px; margin-bottom: 30px"
+                    >
+                      <div
+                        class="form-outline w-100 ms-5"
+                        style="padding-right: 20px"
+                      >
+                        <textarea
+                          class="form-control"
+                          id="textAreaExample"
+                          rows="4"
+                          style="
+                            background: #fff;
+                            border: 1px solid rgb(135, 135, 135);
+                            width: 95%;
+                          "
+                          placeholder="Message"
+                          name="content"
+                          ng-model="content"
+                          required
+                          minlength="6"
+                        ></textarea>
+                        <span class="text-danger"> {{errContent}} </span>
+                        <!-- <span
+                          class="text-danger"
+                          ng-show="form_create_comment.content.$error.minlength && form_create_comment.content.$touched"
+                        >
+                          Vui lòng nhập ít nhất 6 kí tự
+                        </span> -->
+                      </div>
+                    </div>
+                    <div class="float-end pt-1">
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-sm"
+                        ng-click="submitRating()"
+                      >
+                        Post comment
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary btn-sm"
+                        style="margin-right: 50px"
+                        ng-click="clearComment()"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

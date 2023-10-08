@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myTrangChu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/front_end/assets/favicon.png"
+    />
+    <title>Articles</title>
+    <!-- Box-icon -->
+    <link rel="stylesheet" href="../lib/select2/select2.css" />
+    <link
+      href="../lib/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../lib/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../lib/toastr/toastr.css" />
+    <link href="../lib/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="../lib/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="../lib/vendor/simple-datatables/style.css" rel="stylesheet" />
+    <link href="../css/plugin/line-awesome.min.css" rel="stylesheet" />
+    <link
+      href="../lib/fontawesome-free-6.3.0-web/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/custom/stylehome.css" />
+    
+  </head>
+  <body>
+    <header >
+      <div class="nav container">
+        <a href="#" class="logo"
+          ><img
+            src="/front_end/assets/images/favicon.png"
+            alt=""
+            style="width: 10%; text-align: center"
+            class="me-1"
+          />CNTT <span>PTPM</span></a
+        >
+
+        <a href="index.html" class="login">Login</a>
+      </div>
+    </header>
+    <main ng-view></main>
+    <!-- <footer ng-include="'layout/footer.html'"></footer> -->
+
+    <script src="../js/plugin/jquery.js"></script>
+
+    <script src="../js/plugin/bootstrap.js"></script>
+    <script src="../js/plugin/bootstrap.bundle.js"></script>
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-locale_vi-vn.js"></script>
+    <script src="../js/plugin/angular-local-storage.min.js"></script>
+    <script src="./app-trang-chu.js"></script>
+    <script src="./config/api.js"></script>
+    <!-- Service -->
+    <script src="../src/service/trang-chu/trang-chu-service.js"></script>
+    <script src="../src/service/trang-chu/trang-chu-category-service.js"></script>
+    <script src="../src/service/trang-chu/trang-chu-hashtag-service.js"></script>
+    <script src="../src/service/trang-chu/trang-chu-article-service.js"></script>
+    <!-- Controller -->
+    <script src="../src/controller/trang-chu/trangChuController.js"></script>
+    <script src="../src/controller/trang-chu/searchController.js"></script>
+    <script src="../src/controller/trang-chu/trangchuDetailArticleController.js"></script>
+    <script src="../src/controller/trang-chu/searchCategoryController.js"></script>
+    <script src="../src/controller/trang-chu/searchHashtagController.js"></script>
+    <script src="../js/custom/home.js"></script>
+    <script src="./route-trang-chu.js"></script>
+  </body>
+</html>

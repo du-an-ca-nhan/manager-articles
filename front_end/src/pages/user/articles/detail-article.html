@@ -1,0 +1,181 @@
+<!-- <section class="row titl">
+  <div class="col-1"></div> -->
+<div style="padding-left: 0px">
+  <div class="trenn">
+    <div class="profile justify-content-between">
+      <span class="profile-name">
+        <img src="/front_end/assets/people.png" alt="" class="profile-img" />
+        <label class="mt-1" style="margin-left: 10px; font-size: 20px"
+          >Phạm Xuân Hải</label
+        >
+        <span class="ms-2">
+          <a
+            href="#/search-category?category={{myArticleById.nameCategory}}"
+            type="button"
+            class="btn btn-outline-success custom-btn"
+            title="Thể loại"
+            style="font-size: 12px; padding: 2px 6px; margin-top: -3px"
+          >
+            {{myArticleById.nameCategory}}
+          </a>
+        </span>
+      </span>
+
+      <span class="dang" style="color: grey">
+        Đã đăng vào ngày {{myArticleById.browseDate | date:'dd/MM/yyyy hh:mm'}}
+        phút
+        <div
+          class="post-meta__item mr-1 text-muted mt-2"
+          data-tippy=""
+          data-original-title="Lượt xem: 10"
+        >
+          <div class="show-star" ng-show="myArticleById.star > 0">
+            <i class="bx bx-star" style="font-size: 20px"></i>
+            <span style="font-size: 20px" class="me-4"
+              >{{myArticleById.star}}</span
+            >
+          </div>
+
+          <a style="color: grey">
+            <i
+              class="fa-sharp fa-solid fa-comments"
+              style="color: #8f8f8f; font-size: 20px"
+            ></i>
+            <span style="font-size: 20px" class="me-4"
+              >{{myArticleById.numberComments}}</span
+            >
+          </a>
+          <a style="color: grey">
+            <i
+              class="bx bx-heart"
+              style="font-size: 20px"
+              data-ng-click="favoriteArticle(myArticleById.id)"
+              ng-if="myArticleById.favorite == 0"
+            ></i>
+            <i
+              class="bx bxs-heart"
+              style="font-size: 20px"
+              data-ng-click="unfavoriteArticle(myArticleById.id)"
+              ng-if="myArticleById.favorite == 1"
+            >
+            </i>
+            <span style="font-size: 20px">{{myArticleById.tym}}</span>
+          </a>
+        </div>
+      </span>
+    </div>
+  </div>
+  <!-- </div>
+</section> -->
+  <div
+    class="col-1 iconn mt-5"
+    style="padding: 0px; float: left; width: 6%; display: flex; margin: auto"
+  >
+    <button
+      data-v-6b3c5cc4=""
+      type="button"
+      aria-describedby="el-popover-6760"
+      class="el-button is-circle type-control el-button--default el-popover__reference"
+      tabindex="0"
+      style="background-color: #ff6783"
+    >
+      <i
+        class="fa-sharp fa-solid fa-heart"
+        style="font-size: 13px; color: #ffffff"
+        data-ng-click="favoriteArticle(myArticleById.id)"
+        ng-if="myArticleById.favorite == 0"
+      ></i>
+      <i
+        class="fa-sharp fa-solid fa-heart"
+        style="font-size: 13px; color: #020202"
+        data-ng-click="unfavoriteArticle(myArticleById.id)"
+        ng-if="myArticleById.favorite == 1"
+      >
+      </i>
+    </button>
+    <br />
+    <button
+      data-v-6b3c5cc4=""
+      type="button"
+      class="el-button sharing-item clip p-0 el-button--text me-2"
+      style="
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        background-color: #3b4f87;
+      "
+    >
+      <i class="fa-brands fa-facebook-f" style="color: #ffffff"></i>
+    </button>
+    <br />
+  </div>
+  <div class="container-fluid col-11 chuyenmau">
+    <section class="bvchitiet">
+      <div class="row">
+        <div class="col-lg-12">
+          <article
+            data-test="article-preview"
+            class="sc-kHOZwM sc-hOGkXu dPKgXc fiTxcb"
+            align="center"
+          >
+            <div data-test="container" class="sc-bdvvtL cCOiXd">
+              <div class="sc-bdvvtL jbSNqA sc-kHOZwM cjDrZK">
+                <div class="sc-bdvvtL iHLSCF">
+                  <a
+                    data-test="heading-image-link"
+                    href="/blog/content-planning/"
+                    class="sc-cZMNgc iNdGjO"
+                    ><img
+                      data-test="image"
+                      height="250"
+                      width="310"
+                      style="height: 200px"
+                      ng-src="../../../articles-project/src/main/resources/templates/articles/{{myArticleById.id}}/image.png"
+                      alt="content planning"
+                  /></a>
+                </div>
+                <div class="sc-bdvvtL FmHLX">
+                  <h2 data-test="heading-text" class="sc-bBHxTw hsjjsR">
+                    <a data-test="heading-link" href="/blog/content-planning/">
+                      {{myArticleById.title}}
+                    </a>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div
+        class="chitiet"
+        style="background-color: rgb(255, 255, 255); margin-top: 20px"
+      >
+        <div class="row gy-4 pt-5" style="margin-top: 20px">
+          <div class="col" data-aos="fade-up">
+            <div
+              data-parse="true"
+              class="sc-bdvvtL ikHgNc sc-fydGpi jwdqZU"
+              style="background-color: white; padding: 40px"
+            >
+              <div
+                ng-include="'../../../articles-project/src/main/resources/templates/articles/' + myArticleById.id + '/toi-thanh-cong-roi.html'"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="">
+      <a
+        ng-repeat="hastag in myArticleById.hashtags.split(',') track by $index"
+        href="#/search-hashtag?hashtag={{hastag}}"
+      >
+        <i class="bx bxs-purchase-tag"></i>{{hastag}}</a
+      >
+    </div>
+  </div>
+</div>
+<!-- begin comment  -->
+<div ng-include="'./pages/user/articles/comment.html'"></div>
+<!-- end comment -->

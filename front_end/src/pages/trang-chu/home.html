@@ -1,0 +1,289 @@
+<section class="home" id="home">
+  <div class="home-text container">
+    <h2 class="home-title">Portal Articles</h2>
+    <span class="home-subtitle"
+      >Effortlessly manage your articles with our project management tool
+      <3</span
+    >
+
+    <form class="form" style="margin-top: 20px; margin-left: 190px">
+      <a href="#/search?key={{key}}">
+        <button>
+          <svg
+            width="17"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="search"
+          >
+            <path
+              d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+              stroke="currentColor"
+              stroke-width="1.333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </a>
+      <input
+        class="input"
+        placeholder="Type your text"
+        required=""
+        type="text"
+        ng-model="key"
+      />
+      <button class="reset" type="reset">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </form>
+  </div>
+</section>
+<section class="about container" id="about">
+  <div class="contentBx">
+    <h2 class="titleText">Catch up with the trending topics</h2>
+    <p class="title-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos
+      consequuntur voluptate dolorum totam provident ducimus cupiditate dolore
+      doloribus repellat. Saepe ad fugit similique quis quam. Odio suscipit
+      incidunt distinctio.
+      <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+      blanditiis libero pariatur ipsum suscipit voluptates aut, repellendus quos
+      dolor autem, natus laboriosam consectetur maxime cumque, sunt magni optio?
+      Veritatis, ea?
+    </p>
+    <a href="#" class="btn2">Read more</a>
+  </div>
+  <div class="imgBx" style="height: 3px; overflow: hidden">
+    <!-- <img src="/assets/images/about.png" alt="" class="fitBg" /> -->
+    <img
+      src="/front_end/assets/images/home-chua-dn.png"
+      alt=""
+      style="animation: slide 90s infinite"
+    />
+  </div>
+</section>
+
+<section>
+  <div class="post container mt-3">
+    <!-- Post 1 -->
+    <div class="post-box tech" ng-repeat="ar in listArticle">
+      <span class="loai ms-2">
+        <a
+          href="#/search-category?category={{ar.nameCategory}}"
+          type="button"
+          class="buttons-category mt-2"
+          title="Thể loại"
+        >
+          {{ar.nameCategory}}
+        </a>
+      </span>
+      <a href="#article/{{ar.id}}"
+        ><img
+          ng-src="../../../articles-project/src/main/resources/templates/articles/{{ar.id}}/image.png"
+          alt=""
+          class="post-img"
+        />
+      </a>
+
+      <p data-test="category" class="category mt-2">
+        <a
+          href="#/search-hashtag?hashtag={{hashtag.trim()}}"
+          class="category"
+          style="color: green"
+          ng-repeat="hashtag in ar.hashtags.split(',') track by $index"
+          ><i class="bx bxs-purchase-tag"></i>{{hashtag}}</a
+        >
+      </p>
+      <a href="#article/{{ar.id}}" class="post-title">{{ar.title}}</a>
+      <p class="post-description">{{ar.descriptive}}</p>
+      <div class="profile">
+        <img src="{{ar.img}}" alt="" class="profile-img" />
+        <div class="d-flex flex-column mb-1">
+          <span class="profile-name"
+            >{{ar.name}}
+            <a
+              class="me-2 ms-3"
+              style="color: grey; font-size: 18px"
+              href="#/login"
+              ><i class="bx bx-heart"></i> {{ar.tym}}</a
+            >
+          </span>
+          <span class="post-date">{{ar.browseDate| date:'dd/MM/yyyy'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="pagination justify-content-center">
+      <ul class="pagination">
+        <button
+          style="height: 35px; background-color: #18d596; border-radius: 10px"
+          class="page-link me-3"
+          ng-click="prevPage() "
+          ng-disabled="pageModel == 1"
+        >
+          <i class="bx bx-skip-previous text-light"></i>
+        </button>
+        <li>
+          <input
+            type="text"
+            ng-change="inputChangeEvent()"
+            ng-model="pageModel"
+            min="1"
+            max="{{totalPages}}"
+            style="width: 20px; font-size: 18px"
+            disabled
+          />
+          <span>
+            <b style="font-size: 20px" class="me-2"> / </b>{{totalPages}}</span
+          >
+        </li>
+        <button
+          style="height: 35px; background-color: #18d596; border-radius: 10px"
+          class="page-link ms-3"
+          ng-click="nextPage()"
+          ng-disabled="pageModel == totalPages"
+        >
+          <i class="bx bx-skip-next text-light"></i>
+        </button>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center" style="margin-top: -50px">
+        <h2 class="heading-section mb-5">Các Bài Viết Liên Quan</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="featured-carousel owl-carousel">
+          <div class="row">
+            <div class="post container">
+              <!-- Post 1 -->
+              <div class="post-box tech" ng-repeat="ar in listArticle">
+                <span class="loai ms-2">
+                  <a
+                    href="#/search-category?category={{ar.nameCategory}}"
+                    type="button"
+                    class="buttons-category mt-2"
+                    title="Thể loại"
+                  >
+                    {{ar.nameCategory}}
+                  </a>
+                </span>
+                <a href="#article/{{ar.id}}"
+                  ><img
+                    ng-src="../../../articles-project/src/main/resources/templates/articles/{{ar.id}}/image.png"
+                    alt=""
+                    class="post-img"
+                  />
+                </a>
+
+                <p data-test="category" class="category mt-2">
+                  <a
+                    href="#/search-hashtag?hashtag={{hashtag.trim()}}"
+                    class="category"
+                    style="color: green"
+                    ng-repeat="hashtag in ar.hashtags.split(',') track by $index"
+                    ><i class="bx bxs-purchase-tag"></i>{{hashtag}}</a
+                  >
+                </p>
+                <a href="#article/{{ar.id}}" class="post-title">{{ar.title}}</a>
+                <span class="post-date"
+                  >{{ar.browseDate| date:'dd/MM/yyyy'}}</span
+                >
+                <p class="post-description">{{ar.descriptive}}</p>
+
+                <div class="profile">
+                  <img src="{{ar.img}}" alt="" class="profile-img" />
+
+                  <div class="d-flex flex-column mb-1">
+                    <span class="profile-name"
+                      >{{ar.name}}
+                      <a
+                        class="me-2 ms-3"
+                        style="color: grey; font-size: 18px"
+                        data-ng-click="favoriteArticle(ar.id, $index)"
+                        ng-if="ar.favorite == 0"
+                        ><i class="bx bx-heart"></i> {{ar.tym}}</a
+                      >
+                      <a
+                        class="me-2 ms-3"
+                        style="color: grey; font-size: 18px"
+                        data-ng-click="unfavoriteArticle(ar.id, $index)"
+                        ng-if="ar.favorite == 1"
+                        ><i class="bx bxs-heart"></i> {{ar.tym}}</a
+                      >
+                    </span>
+
+                    <span class="post-date"
+                      >{{ar.browseDate| date:'dd/MM/yyyy'}}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="wp-slider">
+  <div class="owl-carousel"></div>
+</div>
+<section class="about container" id="about">
+  <div class="contentBx">
+    <h2 class="titleText">Catch up with the trending topics</h2>
+    <p class="title-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos
+      consequuntur voluptate dolorum totam provident ducimus cupiditate dolore
+      doloribus repellat. Saepe ad fugit similique quis quam. Odio suscipit
+      incidunt distinctio.
+      <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+      blanditiis libero pariatur ipsum suscipit voluptates aut, repellendus quos
+      dolor autem, natus laboriosam consectetur maxime cumque, sunt magni optio?
+      Veritatis, ea?
+    </p>
+    <a href="#" class="btn2">Read more</a>
+  </div>
+  <div class="imgBx" style="height: 3px; overflow: hidden">
+    <!-- <img src="/assets/images/about.png" alt="" class="fitBg" /> -->
+    <img
+      src="/front_end/assets/images/home-chua-dn.png"
+      alt=""
+      style="animation: slide 90s infinite"
+    />
+  </div>
+</section>
+
+<div class="post-filter container">
+  <span
+    class="filter-item active-filter"
+    data-filter="all"
+    ng-click="searchFillter('')"
+    >All</span
+  >
+  <span
+    class="filter-item"
+    ng-repeat="ca in listCategory"
+    ng-click="searchFillter(ca.id)"
+    >{{ca.name}}</span
+  >
+</div>

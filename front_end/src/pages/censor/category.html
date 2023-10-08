@@ -1,0 +1,221 @@
+<div class="d-flex flex-row mb-2">
+  <button
+    type="button"
+    class="btn btn-success me-5"
+    data-bs-toggle="modal"
+    data-bs-target="#modalAdd"
+    style="margin-bottom: 20px"
+  >
+    Add
+  </button>
+  <h6 style="margin-top: 10px">Search Code:</h6>
+  <!-- <input
+    type="text"
+    class="pt-2 mb-3"
+    style="width: 200px; border: 1px #18d596 solid; margin-top: 2px"
+  /> -->
+  <input
+    class="input-style pt-2 mb-3 ms-3"
+    placeholder="Type here"
+    type="text"
+    ng-model="findCategory.code"
+    ng-change="findCategoryByCodeAndName()"
+    style="width: 200px; border: 1px #18d596 solid; margin-top: 2px"
+  />
+
+  <h6 style="margin-top: 10px" class="ms-3">Search Name:</h6>
+  <input
+    class="input-style pt-2 mb-3 ms-3"
+    placeholder="Type here"
+    type="text"
+    ng-model="findCategory.name"
+    ng-change="findCategoryByCodeAndName()"
+    style="width: 200px; border: 1px #18d596 solid; margin-top: 2px"
+  />
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="table-success">
+      <tr>
+        <th class="col-1" style="padding-left: 20px">STT</th>
+        <th class="col-2" style="padding-left: 20px">Code</th>
+        <th class="col-1">Name</th>
+        <th class="col-3 text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" ng-repeat="ca in listCategory">
+        <th style="padding-left: 20px">{{$index + 1}}</th>
+        <td style="padding-left: 20px">{{ca.code}}</td>
+      </tr>
+
+      <tr class="" ng-repeat="ca in listCategoryCrud">
+        <td>{{$index + 1}}</td>
+        <td>{{ca.code}}</td>
+        <td>{{ca.name}}</td>
+        <td class="col-3 text-center">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalUpdate"
+            ng-click="detail(ca.id)"
+            title="Update Category"
+          >
+            <i class="fa-regular fa-pen-to-square" style="color: #ffffff"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            ng-click="deleteCate(ca.id)"
+            title="Delete Category"
+          >
+            <i class="fa-solid fa-trash" style="color: #ffffff"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Add -->
+<div
+  class="modal fade"
+  id="modalAdd"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mb-3">
+                <label for="" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id=""
+                  placeholder="Enter name category"
+                  ng-model="name"
+                />
+                <small class="form-text text-danger">{{errName}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="addCate()">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Update -->
+<div
+  class="modal fade"
+  id="modalUpdate"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog d-flex justify-content-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Category</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mb-3">
+                <label for="" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id=""
+                  placeholder="Enter name category"
+                  ng-model="name"
+                />
+                <small class="form-text text-danger">{{errName}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="updateCate(id)">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<section ng-show="totalPages != 0">
+  <div class="container mt-5">
+    <div class="pagination justify-content-center">
+      <ul class="pagination">
+        <button
+          style="height: 35px; background-color: #18d596; border-radius: 10px"
+          class="page-link me-3"
+          ng-click="prevPage() "
+          ng-disabled="pageModel == 1"
+        >
+          <i class="bx bx-skip-previous text-light"></i>
+        </button>
+        <li>
+          <input
+            type="text"
+            ng-change="inputChangeEvent()"
+            ng-model="pageModel"
+            min="1"
+            max="{{totalPages}}"
+            style="width: 20px; font-size: 20px; border: none"
+            disabled
+          />
+          <span style="font-size: 20px">
+            <b style="font-size: 22px" class="me-2 ms-1"> / </b
+            >{{totalPages}}</span
+          >
+        </li>
+        <button
+          style="height: 35px; background-color: #18d596; border-radius: 10px"
+          class="page-link ms-3"
+          ng-click="nextPage()"
+          ng-disabled="pageModel == totalPages"
+        >
+          <i class="bx bx-skip-next text-light"></i>
+        </button>
+      </ul>
+    </div>
+  </div>
+</section>

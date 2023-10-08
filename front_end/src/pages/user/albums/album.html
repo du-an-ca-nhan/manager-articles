@@ -1,0 +1,921 @@
+<div class="">
+  <div class="row pb-4">
+    <div
+      class=""
+      style="
+        background-image: url('/front_end/assets/images/45.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px;
+        max-height: 100%;
+        max-width: none;
+        padding: 0px;
+      "
+    >
+      <div
+        class="col-12"
+        style="
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.39);
+          max-height: 100%;
+          padding-bottom: 20px;
+          max-width: none;
+          border-radius: 20px;
+        "
+      >
+        <div class="section-title">
+          <h4 class="text-light" style="padding-top: 10px">ALBUM</h4>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Success example"
+            style="height: 3px; width: 10%; margin: 0 auto"
+          >
+            <div
+              class="progress-bar"
+              style="width: 100%; background-color: rgba(6, 169, 99, 0.703)"
+            ></div>
+          </div>
+        </div>
+        <p class="text-light" style="padding: 20px">
+          Streamline your content production and distribution with the help of
+          our favorite content marketing tools. New to the web platform in
+          February
+        </p>
+        <div class="btn1">
+          <a
+            href="#/album/{{album.id}}"
+            type="button"
+            class="hh btn btn-light me-5"
+            ng-repeat="album in albums"
+            style="
+              margin-top: 10px;
+              width: 7em;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-bottom: 10px;
+              margin-left: 20px;
+            "
+            >{{album.title}}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="title-h2">
+            <h4 class="text-danger">
+              Hữu Ích
+              <a
+                href="#"
+                class="ps-5"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="bx bx-edit-alt"></i
+              ></a>
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Edit
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">hhhh</div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </h4>
+          </div>
+          <div class="progress" style="height: 1px">
+            <div
+              class="progress-bar bg-danger"
+              role="progressbar"
+              aria-label="Example 1px high"
+              style="width: 25%"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-5">
+              <img src="/front_end/assets/project-2.png" alt="" width="100%" />
+            </div>
+            <div class="col-7">
+              <p class="text-dark">
+                New to the web platform in February. Discover some of the
+                interesting features that landed in stable and beta web browsers
+                during February 2023. <br />
+                <small class="text-muted">13/05/2022</small>
+              </p>
+              <div class="cham">
+                <i
+                  class="bi bi-three-dots-vertical"
+                  style="margin: 0px; width: 12%"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      ng-click="showConfirmDeleteAlbum($index, album.id)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteAlbumModal"
+                      >Xóa</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-5 pt-2">
+              <img src="/front_end/assets/blog1.jpg" alt="" width="100%" />
+            </div>
+            <div class="col-7">
+              <p class="text-dark">
+                New to the web platform in February. Discover some of the
+                interesting features that landed in stable and beta web browsers
+                during February 2023.
+                <br />
+                <small class="text-muted">08/01/2022</small>
+              </p>
+              <div class="cham">
+                <i
+                  class="bi bi-three-dots-vertical"
+                  style="margin: 0px; width: 12%"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      ng-click="showConfirmDeleteAlbum($index, album.id)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteAlbumModal"
+                      >Xóa</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-5">
+              <img
+                src="/front_end/assets/blog-post-2.jpg"
+                alt=""
+                width="100%"
+              />
+            </div>
+            <div class="col-7">
+              <p class="text-dark">
+                New to the web platform in February. Discover some of the
+                interesting features that landed in stable and beta web browsers
+                during February 2023.
+                <br />
+                <small class="text-muted">13/05/2022</small>
+              </p>
+              <div class="cham">
+                <i
+                  class="bi bi-three-dots-vertical"
+                  style="margin: 0px; width: 12%"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      ng-click="showConfirmDeleteAlbum($index, album.id)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteAlbumModal"
+                      >Xóa</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-5 pt-2 pb-2">
+              <img src="/front_end/assets/project-4.png" alt="" width="100%" />
+            </div>
+            <div class="col-7">
+              <p class="text-dark">
+                New to the web platform in February. Discover some of the
+                interesting features that landed in stable and beta web browsers
+                during February 2023.
+                <br />
+                <small class="text-muted">13/05/2022</small>
+              </p>
+              <div class="cham">
+                <i
+                  class="bi bi-three-dots-vertical"
+                  style="margin: 0px; width: 12%"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      ng-click="showConfirmDeleteAlbum($index, album.id)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteAlbumModal"
+                      >Xóa</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section id="work" class="full-height px-lg-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card">
+            <article class="card1">
+              <a aria-hidden="true" href="/web-platform-02-2023/">
+                <img
+                  alt="Colorful wooden boards."
+                  sizes="(min-width: 570px) 570px, calc(100vw - 48px)"
+                  src="https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format"
+                  srcset="
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=200   200w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=228   228w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=260   260w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=296   296w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=338   338w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=385   385w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=439   439w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=500   500w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=571   571w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=650   650w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=741   741w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=845   845w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=964   964w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1098 1098w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1140 1140w
+                  "
+                  class="card__hero"
+                  decoding="async"
+                  height="330"
+                  loading="lazy"
+                  width="570"
+                />
+              </a>
+              <div class="card__content flow">
+                <h2 class="card__heading text-size-3">
+                  <a href="/web-platform-02-2023/" class="text-dark"
+                    >New to the web
+                  </a>
+                </h2>
+                <p></p>
+                <p class="text-dark">
+                  Discover some of the interesting features during February
+                  2023.
+                </p>
+                <p></p>
+              </div>
+              <div class="gap-top-size-1">
+                <div class="card__avatars cluster color-mid-text">
+                  <a class="avatar" href="/authors/rachelandrew/"
+                    ><img
+                      class="img"
+                      alt="Rachel Andrew"
+                      sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                      src="https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?auto=format&amp;fit=crop&amp;h=40&amp;w=40"
+                      srcset="
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=1&amp;q=75 1x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=5&amp;q=20 5x
+                      "
+                      decoding="async"
+                      height="40"
+                      loading="lazy"
+                      width="40"
+                  /></a>
+                  <div class="flow flow-space-size-0">
+                    <div
+                      class="card__authors flow-space-base"
+                      aria-label="authors"
+                    >
+                      <a href="/authors/rachelandrew/" class="text-dark"
+                        >Rachel Andrew</a
+                      >
+                    </div>
+                    <time class="text-dark">Feb 28, 2023</time>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tags for this post"
+                class="card__tags cluster gap-top-base"
+              >
+                <a class="pill text-dark" href="/tags/new-to-the-web/"
+                  >New to the web platform</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <article class="card1">
+              <a aria-hidden="true" href="/web-platform-02-2023/">
+                <img
+                  alt="Colorful wooden boards."
+                  sizes="(min-width: 570px) 570px, calc(100vw - 48px)"
+                  src="https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format"
+                  srcset="
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=200   200w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=228   228w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=260   260w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=296   296w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=338   338w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=385   385w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=439   439w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=500   500w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=571   571w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=650   650w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=741   741w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=845   845w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=964   964w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1098 1098w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1140 1140w
+                  "
+                  class="card__hero"
+                  decoding="async"
+                  height="330"
+                  loading="lazy"
+                  width="570"
+                />
+              </a>
+              <div class="card__content flow">
+                <h2 class="card__heading text-size-3">
+                  <a href="/web-platform-02-2023/" class="text-dark"
+                    >New to the web
+                  </a>
+                </h2>
+                <p></p>
+                <p class="text-dark">
+                  Discover some of the interesting features during February
+                  2023.
+                </p>
+                <p></p>
+              </div>
+              <div class="gap-top-size-1">
+                <div class="card__avatars cluster color-mid-text">
+                  <a class="avatar" href="/authors/rachelandrew/"
+                    ><img
+                      class="img"
+                      alt="Rachel Andrew"
+                      sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                      src="https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?auto=format&amp;fit=crop&amp;h=40&amp;w=40"
+                      srcset="
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=1&amp;q=75 1x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=5&amp;q=20 5x
+                      "
+                      decoding="async"
+                      height="40"
+                      loading="lazy"
+                      width="40"
+                  /></a>
+                  <div class="flow flow-space-size-0">
+                    <div
+                      class="card__authors flow-space-base"
+                      aria-label="authors"
+                    >
+                      <a href="/authors/rachelandrew/" class="text-dark"
+                        >Rachel Andrew</a
+                      >
+                    </div>
+                    <time class="text-dark">Feb 28, 2023</time>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tags for this post"
+                class="card__tags cluster gap-top-base"
+              >
+                <a class="pill text-dark" href="/tags/new-to-the-web/"
+                  >New to the web platform</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card">
+            <article class="card1">
+              <a aria-hidden="true" href="/web-platform-02-2023/">
+                <img
+                  alt="Colorful wooden boards."
+                  sizes="(min-width: 570px) 570px, calc(100vw - 48px)"
+                  src="https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format"
+                  srcset="
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=200   200w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=228   228w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=260   260w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=296   296w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=338   338w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=385   385w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=439   439w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=500   500w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=571   571w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=650   650w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=741   741w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=845   845w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=964   964w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1098 1098w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1140 1140w
+                  "
+                  class="card__hero"
+                  decoding="async"
+                  height="330"
+                  loading="lazy"
+                  width="570"
+                />
+              </a>
+              <div class="card__content flow">
+                <h2 class="card__heading text-size-3">
+                  <a href="/web-platform-02-2023/" class="text-dark"
+                    >New to the web
+                  </a>
+                </h2>
+                <p></p>
+                <p class="text-dark">
+                  Discover some of the interesting features during February
+                  2023.
+                </p>
+                <p></p>
+              </div>
+              <div class="gap-top-size-1">
+                <div class="card__avatars cluster color-mid-text">
+                  <a class="avatar" href="/authors/rachelandrew/"
+                    ><img
+                      class="img"
+                      alt="Rachel Andrew"
+                      sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                      src="https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?auto=format&amp;fit=crop&amp;h=40&amp;w=40"
+                      srcset="
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=1&amp;q=75 1x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=5&amp;q=20 5x
+                      "
+                      decoding="async"
+                      height="40"
+                      loading="lazy"
+                      width="40"
+                  /></a>
+                  <div class="flow flow-space-size-0">
+                    <div
+                      class="card__authors flow-space-base"
+                      aria-label="authors"
+                    >
+                      <a href="/authors/rachelandrew/" class="text-dark"
+                        >Rachel Andrew</a
+                      >
+                    </div>
+                    <time class="text-dark">Feb 28, 2023</time>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tags for this post"
+                class="card__tags cluster gap-top-base"
+              >
+                <a class="pill text-dark" href="/tags/new-to-the-web/"
+                  >New to the web platform</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <article class="card1">
+              <a aria-hidden="true" href="/web-platform-02-2023/">
+                <img
+                  alt="Colorful wooden boards."
+                  sizes="(min-width: 570px) 570px, calc(100vw - 48px)"
+                  src="https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format"
+                  srcset="
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=200   200w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=228   228w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=260   260w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=296   296w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=338   338w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=385   385w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=439   439w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=500   500w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=571   571w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=650   650w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=741   741w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=845   845w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=964   964w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1098 1098w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1140 1140w
+                  "
+                  class="card__hero"
+                  decoding="async"
+                  height="330"
+                  loading="lazy"
+                  width="570"
+                />
+              </a>
+              <div class="card__content flow">
+                <h2 class="card__heading text-size-3">
+                  <a href="/web-platform-02-2023/" class="text-dark"
+                    >New to the web
+                  </a>
+                </h2>
+                <p></p>
+                <p class="text-dark">
+                  Discover some of the interesting features during February
+                  2023.
+                </p>
+                <p></p>
+              </div>
+              <div class="gap-top-size-1">
+                <div class="card__avatars cluster color-mid-text">
+                  <a class="avatar" href="/authors/rachelandrew/"
+                    ><img
+                      class="img"
+                      alt="Rachel Andrew"
+                      sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                      src="https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?auto=format&amp;fit=crop&amp;h=40&amp;w=40"
+                      srcset="
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=1&amp;q=75 1x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=5&amp;q=20 5x
+                      "
+                      decoding="async"
+                      height="40"
+                      loading="lazy"
+                      width="40"
+                  /></a>
+                  <div class="flow flow-space-size-0">
+                    <div
+                      class="card__authors flow-space-base"
+                      aria-label="authors"
+                    >
+                      <a href="/authors/rachelandrew/" class="text-dark"
+                        >Rachel Andrew</a
+                      >
+                    </div>
+                    <time class="text-dark">Feb 28, 2023</time>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tags for this post"
+                class="card__tags cluster gap-top-base"
+              >
+                <a class="pill text-dark" href="/tags/new-to-the-web/"
+                  >New to the web platform</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <article class="card1">
+              <a aria-hidden="true" href="/web-platform-02-2023/">
+                <img
+                  alt="Colorful wooden boards."
+                  sizes="(min-width: 570px) 570px, calc(100vw - 48px)"
+                  src="https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format"
+                  srcset="
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=200   200w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=228   228w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=260   260w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=296   296w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=338   338w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=385   385w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=439   439w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=500   500w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=571   571w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=650   650w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=741   741w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=845   845w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=964   964w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1098 1098w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1140 1140w
+                  "
+                  class="card__hero"
+                  decoding="async"
+                  height="330"
+                  loading="lazy"
+                  width="570"
+                />
+              </a>
+              <div class="card__content flow">
+                <h2 class="card__heading text-size-3">
+                  <a href="/web-platform-02-2023/" class="text-dark"
+                    >New to the web
+                  </a>
+                </h2>
+                <p></p>
+                <p class="text-dark">
+                  Discover some of the interesting features during February
+                  2023.
+                </p>
+                <p></p>
+              </div>
+              <div class="gap-top-size-1">
+                <div class="card__avatars cluster color-mid-text">
+                  <a class="avatar" href="/authors/rachelandrew/"
+                    ><img
+                      class="img"
+                      alt="Rachel Andrew"
+                      sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                      src="https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?auto=format&amp;fit=crop&amp;h=40&amp;w=40"
+                      srcset="
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=1&amp;q=75 1x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=5&amp;q=20 5x
+                      "
+                      decoding="async"
+                      height="40"
+                      loading="lazy"
+                      width="40"
+                  /></a>
+                  <div class="flow flow-space-size-0">
+                    <div
+                      class="card__authors flow-space-base"
+                      aria-label="authors"
+                    >
+                      <a href="/authors/rachelandrew/" class="text-dark"
+                        >Rachel Andrew</a
+                      >
+                    </div>
+                    <time class="text-dark">Feb 28, 2023</time>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tags for this post"
+                class="card__tags cluster gap-top-base"
+              >
+                <a class="pill text-dark" href="/tags/new-to-the-web/"
+                  >New to the web platform</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <article class="card1">
+              <a aria-hidden="true" href="/web-platform-02-2023/">
+                <img
+                  alt="Colorful wooden boards."
+                  sizes="(min-width: 570px) 570px, calc(100vw - 48px)"
+                  src="https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format"
+                  srcset="
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=200   200w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=228   228w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=260   260w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=296   296w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=338   338w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=385   385w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=439   439w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=500   500w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=571   571w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=650   650w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=741   741w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=845   845w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=964   964w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1098 1098w,
+                    https://web-dev.imgix.net/image/kheDArv5csY6rvQUJDbWRscckLr1/B99XwoFGRglrLQZuEcUL.jpg?auto=format&amp;w=1140 1140w
+                  "
+                  class="card__hero"
+                  decoding="async"
+                  height="330"
+                  loading="lazy"
+                  width="570"
+                />
+              </a>
+              <div class="card__content flow">
+                <h2 class="card__heading text-size-3">
+                  <a href="/web-platform-02-2023/" class="text-dark"
+                    >New to the web
+                  </a>
+                </h2>
+                <p></p>
+                <p class="text-dark">
+                  Discover some of the interesting features during February
+                  2023.
+                </p>
+                <p></p>
+              </div>
+              <div class="gap-top-size-1">
+                <div class="card__avatars cluster color-mid-text">
+                  <a class="avatar" href="/authors/rachelandrew/"
+                    ><img
+                      class="img"
+                      alt="Rachel Andrew"
+                      sizes="(min-width: 40px) 40px, calc(100vw - 48px)"
+                      src="https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?auto=format&amp;fit=crop&amp;h=40&amp;w=40"
+                      srcset="
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=1&amp;q=75 1x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+                        https://web-dev.imgix.net/image/admin/dUAN2DEXHRT6G6iPrIby.jpg?fit=crop&amp;h=40&amp;w=40&amp;auto=format&amp;dpr=5&amp;q=20 5x
+                      "
+                      decoding="async"
+                      height="40"
+                      loading="lazy"
+                      width="40"
+                  /></a>
+                  <div class="flow flow-space-size-0">
+                    <div
+                      class="card__authors flow-space-base"
+                      aria-label="authors"
+                    >
+                      <a href="/authors/rachelandrew/" class="text-dark"
+                        >Rachel Andrew</a
+                      >
+                    </div>
+                    <time class="text-dark">Feb 28, 2023</time>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tags for this post"
+                class="card__tags cluster gap-top-base"
+              >
+                <a class="pill text-dark" href="/tags/new-to-the-web/"
+                  >New to the web platform</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="pagination" style="padding-left: 200px">
+          <a href="#">«</a>
+          <a href="#">1</a>
+          <a class="active" href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">»</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="title-h2">
+          <h4 class="text-danger">XEM THÊM</h4>
+        </div>
+        <div class="progress" style="height: 1px">
+          <div
+            class="progress-bar bg-danger"
+            role="progressbar"
+            aria-label="Example 1px high"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-5">
+            <img src="/front_end/assets/project-2.png" alt="" width="100%" />
+          </div>
+          <div class="col-7">
+            <p class="text-dark">
+              New to the web platform in February. Discover some of the
+              interesting features that landed in stable and beta web browsers
+              during February 2023. <br />
+              <small class="text-muted">13/05/2022</small>
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-5 pt-2">
+            <img src="/front_end/assets/blog1.jpg" alt="" width="100%" />
+          </div>
+          <div class="col-7">
+            <p class="text-dark">
+              New to the web platform in February. Discover some of the
+              interesting features that landed in stable and beta web browsers
+              during February 2023.
+              <br />
+              <small class="text-muted">08/01/2022</small>
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-5">
+            <img
+              src="/front_end/assets/blog2.jpg.crdownload"
+              alt=""
+              width="100%"
+            />
+          </div>
+          <div class="col-7">
+            <p class="text-dark">
+              New to the web platform in February. Discover some of the
+              interesting features that landed in stable and beta web browsers
+              during February 2023.
+              <br />
+              <small class="text-muted">13/05/2022</small>
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-5 pt-2 pb-2">
+            <img src="/front_end/assets/project-4.png" alt="" width="100%" />
+          </div>
+          <div class="col-7">
+            <p class="text-dark">
+              New to the web platform in February. Discover some of the
+              interesting features that landed in stable and beta web browsers
+              during February 2023.
+              <br />
+              <small class="text-muted">13/05/2022</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+</div>

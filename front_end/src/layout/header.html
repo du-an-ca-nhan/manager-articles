@@ -1,0 +1,335 @@
+<!-- SIDEBAR -->
+<section id="sidebar" ng-init="ToolBar()">
+  <a href="#" class="brand ms-3 mt-2">
+    <img src="/front_end/assets/2.png" alt="" style="width: 110px" />
+    <span class="text ms-2">Articles</span>
+  </a>
+  <ul class="side-menu" style="padding-left: 10px">
+    <li
+      style="
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        width: 300px;
+      "
+    >
+      <a
+        href="#/create-article"
+        style="background-color: #1ac396d9; color: aliceblue"
+        title="Add Articles"
+        class="custom-hah"
+      >
+        <i class="bx bxs-cloud-download"></i>Add Articles
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu top">
+    <li data-id="home">
+      <a href="#" title="Home">
+        <i class="bx bxs-dashboard"></i>
+        <span class="text">Home</span>
+      </a>
+    </li>
+    <li data-id="articles">
+      <a href="#/articles" title="Articles">
+        <i class="bx bxs-shopping-bag-alt"></i>
+        <span class="text">Articles</span>
+      </a>
+    </li>
+    <li data-id="my-article">
+      <a href="#/my-article" title="My Articles">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">My Articles</span>
+      </a>
+    </li>
+    <li data-id="favourite-articles">
+      <a href="#/favourite-articles" title="My Favourite Articles">
+        <i class="bx bxs-heart"></i>
+        <span class="text">My Favourite Articles</span>
+      </a>
+    </li>
+    <li data-id="album" title="Album">
+      <a href="#/album">
+        <i class="bx bx-list-ul" style="font-weight: bold"></i>
+        <span class="text">Album</span>
+      </a>
+    </li>
+    <li data-id="history">
+      <a href="#/history">
+        <i class="bx bxs-message-dots"></i>
+        <span class="text">History</span>
+      </a>
+    </li>
+    <li data-id="articles-trash">
+      <a href="#/article-trash">
+        <i class="bx bxs-trash"></i>
+        <span class="text">Article Trash</span>
+      </a>
+    </li>
+    <li data-id="articles-chart">
+      <a href="#/chart">
+        <i class="bx bxs-chart"></i>
+        <span class="text">Chart</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu top">
+    <li data-id="logout">
+      <a href="src/./../trang-chu.html#" class="logout">
+        <i class="bx bxs-log-out-circle"></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- SIDEBAR -->
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i class="bx bx-menu"></i>
+    <form>
+      <div class="form-input">
+        <div
+          class="icon"
+          style="
+            flex-grow: 1;
+            padding-top: 6px;
+            padding-left: 15px;
+            height: 100%;
+            border: none;
+            background: var(--grey1);
+            border-radius: 36px 0 0 36px;
+            width: 30px;
+            color: black;
+          "
+        >
+          <i class="bx bx-search"></i>
+        </div>
+        <input
+          type="search"
+          placeholder="What are you looking for?"
+          ng-model="key"
+        />
+        <button type="submit" class="search-btn">
+          <a href="#search-result?key={{key}}" style="color: aliceblue"
+            >Search</a
+          >
+        </button>
+      </div>
+    </form>
+    <input type="checkbox" id="switch-mode" hidden />
+    <a
+      class="notification"
+      data-v-23e635c8=""
+      id="dropdownNotification"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      aria-describedby="el-popover-853"
+      tabindex="0"
+    >
+      <!-- my-tooltip
+      tooltip-content="Thông báo" -->
+      <i class="bx bxs-bell" style="color: rgb(0, 0, 0)"></i>
+      <span class="num">{{countNotifications}}</span>
+    </a>
+    <ul
+      class="dropdown-menu notifi"
+      style="
+        width: 540px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        border: 0px;
+        background-image: linear-gradient(
+          45deg,
+          rgb(247 247 247),
+          rgb(255 255 255)
+        );
+      "
+      aria-labelledby="dropdownNotification"
+    >
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      ></div>
+      <li class="mb-3">
+        <div data-v-ff3977b0="">
+          <div
+            class="search-filters-container"
+            data-cy="search-filters-container"
+            data-v-4a84de4b=""
+          >
+            <div class="filters-content" data-v-4a84de4b="">
+              <div class="grade-filters-container" data-v-4a84de4b="">
+                <p
+                  class="grade-filters-heading"
+                  data-v-4a84de4b=""
+                  style="
+                    margin-bottom: -10px;
+                    font-size: 17px;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    background-image: linear-gradient(
+                      40deg,
+                      #14644dd9,
+                      #1fe0acd9
+                    );
+                  "
+                >
+                  <b> Notification</b>
+                </p>
+                <div ng-if="notifications.length === 0" style="text-align: center; margin-top: 30px;">
+                  <span style="color: black;">Không có dữ liệu.</span>
+                </div>
+                <hr style="margin-bottom: 10px" />
+                <div class="all-row" ng-if="notifications.length > 0">
+                  <div
+                    class="nofi delete-icon"
+                    style="margin-bottom: 10px"
+                    ng-repeat="no in notifications"
+                    ng-class="{ 'notification-unread': !no.status }"
+                  >
+                    <a
+                      ng-href="{{no.type == 5 ? '#my-article/' + no.articlesId : '#trang-chu/' + no.articlesId}}"
+                      ng-click="updateNotificationStatus(no.id)"
+                    >
+                      <ul
+                        class="grade-filters"
+                        data-v-4a84de4b=""
+                        style="padding-top: 10px; padding-left: 40px"
+                      >
+                        <li>
+                          <div class="row">
+                            <div
+                              class="col-1"
+                              style="padding: 0px; margin-left: 5px"
+                            >
+                              <div class="notification-media">
+                                <img
+                                  src="https://lh5.googleusercontent.com/-a1CWlFnA5xE/AAAAAAAAAAI/AAAAAAAAl1I/UcwPajZOuN4/photo.jpg"
+                                  alt=""
+                                  class="notification-user-avatar"
+                                />
+                                <i
+                                  class="fa-solid fa-comment-alt notification-reaction"
+                                  ng-if="no.type == 1"
+                                ></i>
+                                <i
+                                  class="fa-solid fa-check notification-reaction"
+                                  ng-if="no.type == 2"
+                                ></i>
+                                <i
+                                  class="fa-solid fa-star notification-reaction"
+                                  ng-if="no.type == 3"
+                                ></i>
+                                <i
+                                  class="fa-sharp fa-solid fa-heart notification-reaction"
+                                  ng-if="no.type == 4"
+                                ></i>
+                                <i
+                                  class="fa-sharp fa-solid fa-xmark notification-reaction"
+                                  ng-if="no.type == 5"
+                                ></i>
+                              </div>
+                            </div>
+                            <div
+                              class="col-10"
+                              style="padding-left: 1px; padding-right: 0px"
+                            >
+                              <div class="notification-content">
+                                <p
+                                  class="notification-text"
+                                  style="padding-left: 2px"
+                                >
+                                  {{no.contentActivity}}
+                                </p>
+                                <span class="notification-timer"
+                                  >{{getNotificationTime(no.createdDate)}}</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </a>
+
+                    <div
+                      class="views-icon"
+                      style="
+                        margin-top: 20px;
+                        margin-right: 20px;
+                        margin-left: -35px;
+                      "
+                    >
+                      <span
+                        class="btn btn-light"
+                        style="cursor: pointer"
+                        ng-click="deleteNotification(no.id)"
+                        title="Delete Notification"
+                      >
+                        <i class="fa fa-trash"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <input
+        style="color: #136457; padding-left: 20px"
+        type="button"
+        class="btn btn-light"
+        value="Load more..."
+        ng-show="currentPage + 1 < totalPages"
+        ng-click="loadMore()"
+      />
+    </ul>
+    <div class="dropdown" style="padding-left: 5px">
+      <a
+        href="#"
+        class="profile"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img src="/front_end/assets/people.png" />
+      </a>
+      <ul
+        class="dropdown-menu"
+        style="width: 10px; --bs-dropdown-link-active-bg: #0ba25c"
+      >
+        <li>
+          <a class="dropdown-item" href="#/profile" style="padding-left: 40px"
+            ><i class="bi bi-person-lines-fill" style="padding-right: 7px"> </i>
+            <span>Profile</span></a
+          >
+        </li>
+        <!-- <li>
+          <a class="dropdown-item" href="#" style="color: black"
+            >Another action</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="#" style="color: black"
+            >Something else here</a
+          >
+        </li> -->
+      </ul>
+    </div>
+    <!-- <a href="#/users" class="profile">
+      <img src="/front_end/assets/people.png" />
+    </a> -->
+  </nav>
+  <!-- NAVBAR -->
+  <main ng-view></main>
+  <!-- <footer ng-include="'/front_end/src/layout/footer.html'"></footer> -->
+</section>
+<!-- CONTENT -->
+
+<!-- Modal -->

@@ -1,0 +1,190 @@
+<!-- <div
+  class="container-narrow"
+  ng-intro-options="IntroOptions"
+  ng-intro-method="CallMe"
+  ng-intro-oncomplete="CompletedEvent"
+  ng-intro-onexit="ExitEvent"
+  ng-intro-onchange="ChangeEvent"
+  ng-intro-onbeforechange="BeforeChangeEvent"
+  ng-intro-autostart="false"
+>
+  <div class="masthead">
+    <button class="btn btn-large btn-success" ng-click="CallMe();">Demo</button>
+    <span id="step1">
+      <a>Phạm Xuân</a>
+    </span>
+    <span id="step2">
+      <a>Hải</a>
+    </span>
+  </div>
+</div> -->
+
+<section
+  style="background-color: rgb(253, 253, 253); border-radius: 20px"
+  ng-init="Summernote()"
+>
+  <div class="container-fluid" ng-init="getHtml()">
+    <div class="row">
+      <div class="col-11">
+        <form>
+          <div class="mb-3" style="margin-top: 30px" z>
+            <small id="helpId" class="form-text text-danger"
+              >{{errTitle}}</small
+            >
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter title..."
+              ng-model="title"
+            />
+          </div>
+          <div class="mb-3">
+            <small id="helpId" class="form-text text-danger"
+              >{{errHashTag}}</small
+            >
+            <input
+              type="hidden"
+              ui-select2="select2Options"
+              ng-model="list_of_string"
+              style="
+                border-bottom: solid 2px var(--mau1);
+                border-radius: 0px;
+                background-color: rgb(255, 255, 255);
+                width: 100%;
+              "
+              placeholder="Enter from 1 to 5 hashtag..."
+            />
+          </div>
+          <small id="helpId" class="form-text text-danger"
+            >{{errContent}}</small
+          >
+          <div id="summernote"></div>
+        </form>
+      </div>
+      <div
+        class="col-1"
+        style="
+          background-color: rgb(252, 252, 252);
+          border-left: 2px double rgb(177, 177, 178);
+        "
+      >
+        <div class="row">
+          <div class="dropdown">
+            <button
+              class="btn btn-light dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="
+                margin-top: 30px;
+                background-color: #2affbf23;
+                color: #0ba577;
+                border-left: solid 5px #058660;
+                border-radius: 0px 5px 5px 0px;
+              "
+            >
+              <i class="fa-sharp fa-solid fa-eye" style="color: #37d29e"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  ng-click="showPreview()"
+                  data-toggle="modal"
+                  data-target="#previewModal"
+                >
+                  <i
+                    class="fa-sharp fa-solid fa-eye"
+                    style="padding-right: 10px"
+                  ></i
+                  >Post preview</a
+                >
+              </li>
+              <li>
+                <button
+                  ng-if="!showButton"
+                  ng-click="saveDraftHTML($event)"
+                  type="button"
+                  class="dropdown-item bi bi-cloud-download"
+                >
+                  <span style="padding-left: 9px"> Save add</span>
+                </button>
+                <button
+                  ng-if="showButton"
+                  ng-click="updateMyArticle($event)"
+                  type="button"
+                  class="dropdown-item bi bi-cloud-download"
+                  style="padding-right: 10px"
+                >
+                  Save update
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div style="margin-top: 20px" ng-if="!showButton">
+            <button
+              ng-click="saveHTML($event)"
+              type="button"
+              class="btn btn-primary"
+              style="
+                background-color: #1ac396d9;
+                border: solid 1px white;
+                width: 60px;
+              "
+              title="Publish add"
+            >
+              <i class="bi bi-fast-forward"></i>
+            </button>
+          </div>
+          <div style="margin-top: 20px" ng-if="status != 3 && showButton">
+            <button
+              ng-click="updateMyArticleToCensor($event)"
+              type="button"
+              class="btn btn-primary"
+              style="background-color: #fb3c75c3; border: solid 1px white"
+            >
+              <i class="bi bi-caret-right-fill"></i>Publish update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- test -->
+
+<!-- Modal review -->
+<div
+  class="modal fade container-fluid"
+  id="previewModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="previewModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="previewModalLabel">Post Preview</h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div ng-bind-html="preview"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
